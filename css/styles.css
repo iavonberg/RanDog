@@ -27,13 +27,14 @@ h1 {
    margin-bottom: 0;
 }
 
-#optionWrapper {
+#searchWrapper {
    width: 90%;
    margin: auto;
 }
 
-select {
-   margin: 10px;
+input {
+   margin: 15px 15px;
+   width: 90%;
 }
 
 #buttonWrapper {
