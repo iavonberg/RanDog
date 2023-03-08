@@ -37,15 +37,10 @@ input {
    width: 90%;
 }
 
-#buttonWrapper {
-   padding-top: 2%;
-   width: 40%;
+#breedSelect, #removeBreed {
    margin: auto;
 }
 
-button {
-   margin: 5px
-}
 
 #home {
    margin-left: -80%;
