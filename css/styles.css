@@ -1,0 +1,52 @@
+body {
+   display: flex;
+   justify-content: flex-end;
+   background-color: #cccccc;
+}
+
+#dogImg {
+   background-image: url("/RanDog/images/Vizsla-Placeholder.jpg");
+   background-position: center center;
+   background-attachment: fixed;
+   background-size: cover;
+}
+
+#settings {
+   width: 3.5%;
+}
+
+#settings img {
+   width: 100%;
+}
+
+#wrapper {
+    margin: 0 30% 0 0;
+   }
+
+h1 {
+   margin-bottom: 0;
+}
+
+#optionWrapper {
+   width: 90%;
+   margin: auto;
+}
+
+select {
+   margin: 10px;
+}
+
+#buttonWrapper {
+   padding-top: 2%;
+   width: 40%;
+   margin: auto;
+}
+
+button {
+   margin: 5px
+}
+
+#home {
+   margin-left: -80%;
+   cursor: pointer;
+}
