@@ -6,9 +6,6 @@ let breedSelected = document.querySelector('#searchBox').value;
 let breedPreview = document.querySelector('#breedPreview');
 
 
-let breeds = [];
-
-
 searchBtn.addEventListener('click', getResults)
 
 function getResults(e) {
@@ -35,10 +32,12 @@ breedSelect.addEventListener('click', addBreed);
 
 function addBreed() {
     let breedSelected = document.querySelector('#searchBox').value;
+    let breeds = localStorage.getItem('breeds');
+    breeds = breeds ? breeds.split(', '): [];
     breeds.push(breedSelected);
-    chosenBreeds.innerHTML = `${breeds}, `;
+    localStorage.setItem('breeds', breeds.toString());
     console.log(breeds);
-}
+    chosenBreeds.innerHTML = `${breeds}, `;}
 
 removeBreed.addEventListener('click', clearBreeds)
 
