@@ -5,6 +5,14 @@ let chosenBreeds = document.querySelector('#chosenBreeds');
 let breedSelected = document.querySelector('#searchBox').value;
 let breedPreview = document.querySelector('#breedPreview');
 
+savedBreeds = window.localStorage.getItem('breeds');
+console.log(savedBreeds)
+if (savedBreeds != " ") {
+    chosenBreeds.innerHTML = `${savedBreeds}, `;
+} if (savedBreeds == null) {
+    chosenBreeds.innerHTML = "No breeds yet :("
+}
+
 
 searchBtn.addEventListener('click', getResults)
 
@@ -43,6 +51,7 @@ removeBreed.addEventListener('click', clearBreeds)
 
 function clearBreeds() {
     breeds = [];
+    localStorage.removeItem('breeds');
     console.log(breeds);
     chosenBreeds.innerHTML = "No breeds yet :("
 };
