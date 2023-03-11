@@ -39,10 +39,15 @@ input {
 
 #breedSelect, #removeBreed {
    margin: auto;
+   display: hidden;
 }
 
 
 #home {
    margin-left: -80%;
    cursor: pointer;
+}
+
+.hidden {
+   display: none;
 }

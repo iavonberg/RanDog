@@ -9,7 +9,9 @@ savedBreeds = window.localStorage.getItem('breeds');
 console.log(savedBreeds)
 if (savedBreeds != " ") {
     chosenBreeds.innerHTML = `${savedBreeds}, `;
+    removeBreed.classList.remove('hidden');
 } if (savedBreeds == null) {
+    removeBreed.classList.add('hidden');
     chosenBreeds.innerHTML = "No breeds yet :("
 }
 
@@ -24,6 +26,8 @@ function getResults(e) {
     fetch(byBreedUrl).then(function(res) {
         return res.json();
     }).then(function(breedSelected) {
+        breedSelect.classList.remove('hidden');
+        breedSelect.classList.add('visible');
         breedSelected.message.forEach(function(picture) {
             let previewPic = document.createElement('img');
             previewPic.setAttribute('src', picture);
@@ -45,7 +49,8 @@ function addBreed() {
     breeds.push(breedSelected);
     localStorage.setItem('breeds', breeds.toString());
     console.log(breeds);
-    chosenBreeds.innerHTML = `${breeds}, `;}
+    chosenBreeds.innerHTML = `${breeds}, `;
+    removeBreed.classList.remove('hidden');}
 
 removeBreed.addEventListener('click', clearBreeds)
 
@@ -54,4 +59,5 @@ function clearBreeds() {
     localStorage.removeItem('breeds');
     console.log(breeds);
     chosenBreeds.innerHTML = "No breeds yet :("
+    removeBreed.classList.add('hidden');
 };
