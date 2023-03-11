@@ -5,7 +5,6 @@ body {
 }
 
 #dogImg {
-   background-image: url("/RanDog/images/Vizsla-Placeholder.jpg");
    background-position: center center;
    background-attachment: fixed;
    background-size: cover;
