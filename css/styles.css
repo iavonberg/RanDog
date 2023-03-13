@@ -1,17 +1,21 @@
 body {
-   display: flex;
-   justify-content: flex-end;
-   background-color: #cccccc;
+   background-color: #706F6F;
 }
 
 #dogImg {
-   background-position: center center;
+   background-position: center;
    background-attachment: fixed;
-   background-size: cover;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+#homeWrapper {
+   display: flex;
+   justify-content: flex-end;
 }
 
 #settings {
-   width: 3.5%;
+   width: 33px;
 }
 
 #settings img {
@@ -39,6 +43,8 @@ input {
 #breedSelect, #removeBreed {
    margin: auto;
    display: hidden;
+   background-color: #CCDDE2;
+   border: 1px solid #CCDDE2;
 }
 
 
