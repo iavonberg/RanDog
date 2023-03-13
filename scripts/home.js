@@ -2,10 +2,19 @@
  let homeImg = document.querySelector('#dogImg');
 
 
-let homeBreeds = window.localStorage.getItem('breeds');
-console.log(homeBreeds);
 
-let url = 'https://dog.ceo/api/breed/'+ homeBreeds +'/images/random';
+ let homeBreeds = window.localStorage.getItem('breeds').split(",");
+
+function getRandomBreed() {
+    const randomIndex = Math.floor(Math.random() * homeBreeds.length);
+    const currentBreed = homeBreeds[randomIndex];
+    return currentBreed
+}
+
+currentBreed = getRandomBreed(homeBreeds);
+console.log(currentBreed);
+
+let url = 'https://dog.ceo/api/breed/'+ currentBreed +'/images/random';
     fetch(url).then(function(res) {
         return res.json();
     }).then(function (randImg) {

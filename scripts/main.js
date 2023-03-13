@@ -1,3 +1,5 @@
+// SETTINGS PAGE //
+
 const searchBtn = document.querySelector('#search');
 const breedSelect = document.querySelector('#breedSelect');
 const removeBreed = document.querySelector('#removeBreed');
@@ -45,11 +47,10 @@ breedSelect.addEventListener('click', addBreed);
 function addBreed() {
     let breedSelected = document.querySelector('#searchBox').value;
     let breeds = localStorage.getItem('breeds');
-    breeds = breeds ? breeds.split(', '): [];
-    breeds.push(breedSelected);
+    breeds = breeds ? breeds.split(','): [];
+    breeds.push(breedSelected.toLowerCase());
     localStorage.setItem('breeds', breeds.toString());
-    console.log(breeds);
-    chosenBreeds.innerHTML = `${breeds}, `;
+    chosenBreeds.innerHTML = `${breeds}`;
     removeBreed.classList.remove('hidden');}
 
 removeBreed.addEventListener('click', clearBreeds)
@@ -61,3 +62,4 @@ function clearBreeds() {
     chosenBreeds.innerHTML = "No breeds yet :("
     removeBreed.classList.add('hidden');
 };
+
