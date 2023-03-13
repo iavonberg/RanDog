@@ -22,21 +22,24 @@ searchBtn.addEventListener('click', getResults)
 
 function getResults(e) {
     e.preventDefault();
-    breedPreview.innerHTML = "";
     let breedSelected = document.querySelector('#searchBox').value.toLowerCase();
     let byBreedUrl = 'https://dog.ceo/api/breed/'+ breedSelected +'/images/random/4';
     fetch(byBreedUrl).then(function(res) {
-        return res.json();
+            return res.json();
     }).then(function(breedSelected) {
-        breedSelect.classList.remove('hidden');
-        breedSelect.classList.add('visible');
-        breedSelected.message.forEach(function(picture) {
+        console.log(breedSelected);
+        if(breedSelected.status == 'success'){
+        breedSelect.classList.remove('hidden');        breedSelected.message.forEach(function(picture) {
             let previewPic = document.createElement('img');
             previewPic.setAttribute('src', picture);
             previewPic.style.width = "25%";
             previewPic.style.height = "400px";
             breedPreview.appendChild(previewPic);
         })
+        } else {
+            breedSelect.classList.add('hidden');
+            breedPreview.innerHTML = "No breed found. Please try again."
+        }
     })
 }
 
