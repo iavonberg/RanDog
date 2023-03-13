@@ -33,9 +33,8 @@ function getResults(e) {
         breedSelected.message.forEach(function(picture) {
             let previewPic = document.createElement('img');
             previewPic.setAttribute('src', picture);
-            previewPic.style.display = "inline-block";
             previewPic.style.width = "25%";
-            previewPic.style.height = "200px";
+            previewPic.style.height = "400px";
             breedPreview.appendChild(previewPic);
         })
     })

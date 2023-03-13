@@ -1,6 +1,11 @@
+/* Multi-Page Styles */
+
 body {
    background-color: #706F6F;
+   color: #011627;
 }
+
+/* Home Page Styles */
 
 #dogImg {
    background-position: center;
@@ -22,37 +27,42 @@ body {
    width: 100%;
 }
 
-#wrapper {
-    margin: 0 30% 0 0;
-   }
-
-h1 {
-   margin-bottom: 0;
-}
-
-#searchWrapper {
-   width: 90%;
-   margin: auto;
-}
-
-input {
-   margin: 15px 15px;
-   width: 60%;
-}
-
-#breedSelect, #removeBreed {
-   margin: auto;
-   display: hidden;
-   background-color: #CCDDE2;
-   border: 1px solid #CCDDE2;
-}
-
+/* Settings Page Styles */
 
 #home {
-   margin-left: -80%;
    cursor: pointer;
 }
 
 .hidden {
    display: none;
+}
+
+#settingsWrapper {
+   display: flex;
+   flex-wrap: wrap;
+   }
+
+h1, #searchWrapper {
+   text-align: center;
+}
+
+h1, #searchWrapper, #breedPreview, h2, #chosenBreeds {
+   width: 100%;
+}
+
+#previewWrapper {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+h2 {
+   margin-bottom: 0;
+}
+
+#removeBreed {
+   margin-top: 3px;
+   background-color: #FF331F;
+   border: 2px solid #7A0A00;
+   color: #CCDDE2;
 }

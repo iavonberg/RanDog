@@ -12,11 +12,10 @@ function getRandomBreed() {
 }
 
 currentBreed = getRandomBreed(homeBreeds);
-console.log(currentBreed);
 
 let url = 'https://dog.ceo/api/breed/'+ currentBreed +'/images/random';
     fetch(url).then(function(res) {
         return res.json();
     }).then(function (randImg) {
         homeImg.style.backgroundImage="url(" + randImg.message+ ")";
-        console.log(randImg.message)})
+})
